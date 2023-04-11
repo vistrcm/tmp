@@ -1,0 +1,9 @@
+services:
+  posgres:
+    image: postgres:13.8
+    environment:
+      POSTGRES_PASSWORD: supersecret
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432
